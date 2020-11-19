@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <style>
@@ -17,7 +18,14 @@
   <canvas id="canvas" class="d-none"></canvas>
   
   <div class="overlay">
-    
+  <?php
+    if(isset($_GET['name'])){
+      $name="target_".$_GET['name'];
+    }else{
+      $name="unknow_target";
+    }
+  ?>
+  <input class="target_name" type="text" value="<?php echo $name ?>">
   </div>
 
 

